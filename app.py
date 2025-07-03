@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
+from pytz import timezone
 import sqlite3
 import csv
 import io
@@ -35,7 +36,8 @@ def add_data():
     data = request.get_json()
     voltage = data['voltage']
     current = data['current']
-    timestamp = datetime.datetime.now().strftime('%H:%M:%S')
+    india = timezone('Asia/Kolkata')
+    timestamp =  datetime.datetime.now(india).strftime("%H:%M:%S")
     efficiency = (voltage * current) / (20 * 2.5) * 100
     conn = sqlite3.connect('data.db')
     c = conn.cursor()
