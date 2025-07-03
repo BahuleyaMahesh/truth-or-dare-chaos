@@ -1,0 +1,38 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar Panel Efficiency Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>☀️ Solar Panel Efficiency Analyzer</h1>
+
+    <form id="dataForm">
+      <input type="number" step="0.1" id="voltage" placeholder="Voltage (V)" required>
+      <input type="number" step="0.1" id="current" placeholder="Current (A)" required>
+      <button type="submit">Add Reading</button>
+    </form>
+
+    <div id="latestStats">
+      <h3>Latest Reading</h3>
+      <p>Voltage: <span id="v">-</span> V</p>
+      <p>Current: <span id="c">-</span> A</p>
+      <p>Efficiency: <span id="e">-</span> %</p>
+      <p>Time: <span id="t">-</span></p>
+    </div>
+
+    <div class="btn-row">
+      <button onclick="fetchData()">🔁 Refresh</button>
+      <a href="/export" target="_blank"><button>⬇️ Export CSV</button></a>
+    </div>
+
+    <canvas id="voltageChart" height="100"></canvas>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
