@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Resume Roaster</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 AI Resume Roaster</h1>
+    <p>Paste your resume below to get roasted like never before.</p>
+
+    <input type="file" id="pdfUpload" accept="application/pdf">
+    <textarea id="resumeInput" placeholder="Paste your resume here..."></textarea>
+    <button onclick="roastResume()">Roast Me</button>
+
+    <div id="roastOutput"></div>
+  </div>
+
+  <script src="roasts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+
+</body>
+</html>
