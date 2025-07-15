@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  color: #fff;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h1, h2 {
+  text-align: center;
+  color: #ffcccb;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #ffd4d4;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #e60000;
+}
+
+.hidden {
+  display: none;
+}
+
+#promptDisplay, #punishmentDisplay {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  font-size: 1.1em;
+  color: #ffaaaa;
+}
+
+#playerInputs input {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.nsfw-warning {
+  background: #fff0f0;
+  color: #cc0000;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  font-size: 0.9em;
+}
+
+.bottle-area {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#bottle {
+  width: 120px;
+  transition: transform 3s ease-out;
+}
